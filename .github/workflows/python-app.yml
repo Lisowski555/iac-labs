@@ -61,6 +61,7 @@ jobs:
         key: ${{ runner.os }}-venv
     - name: Run Lint
       run: |
+        poetry run task lint
         
   formatter:
 
