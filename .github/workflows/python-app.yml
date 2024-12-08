@@ -13,9 +13,13 @@ permissions:
   contents: read
 
 jobs:
-  build:
 
+  build:
     runs-on: ubuntu-latest
+ 
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
 
     defaults:
       run:
@@ -99,6 +103,7 @@ jobs:
     defaults:
       run:
         working-directory: ./example-app
+        shell: bash
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.11
